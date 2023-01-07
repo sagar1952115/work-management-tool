@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Todos from "./pages/Todos";
 import ProtectedRoute from "./ProtectedRoute";
+// import Project from "./pages/Project";
 
 function App() {
   const { user, dispatch } = useContext(DataContext);
@@ -14,7 +15,7 @@ function App() {
     if (loggedInUser) {
       dispatch({ type: "INIT", payload: JSON.parse(loggedInUser) });
     }
-  }, []);
+  });
   return (
     <Routes>
       <Route path="/" element={<ProtectedRoute />}>
