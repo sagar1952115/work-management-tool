@@ -15,7 +15,7 @@ function App() {
     if (loggedInUser) {
       dispatch({ type: "INIT", payload: JSON.parse(loggedInUser) });
     }
-  });
+  },[]);
   return (
     <Routes>
       <Route path="/" element={<ProtectedRoute />}>

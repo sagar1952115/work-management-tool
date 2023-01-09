@@ -4,7 +4,8 @@ import { DataContext } from "../context/context";
 import { toggleModal } from "../context/DataActions";
 
 function LeftModal() {
-  const { currentTask, dispatch, modalOpen } = useContext(DataContext);
+  const { currentTask, dispatch, modalOpen, createProjectModal } =
+    useContext(DataContext);
   const { title, description = "", src, username } = currentTask;
 
   const [value, setValue] = useState(description);
@@ -38,7 +39,7 @@ function LeftModal() {
   };
   return (
     <div
-      className={`${
+      className={`${createProjectModal ? "blur-[2px]" : ""}  ${
         modalOpen ? "flex translate-x-0" : "hidden translate-x-7"
       } bg-white absolute right-0 top-[150px] h-[80%] p-4 shadow-lg  w-[60%] z-20 flex-col `}
     >

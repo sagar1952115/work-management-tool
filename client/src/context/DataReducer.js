@@ -25,6 +25,11 @@ const DataReducer = (state, action) => {
         ...state,
         modalOpen: !state.modalOpen,
       };
+    case "TOGGLE_CREATE_PROJECT_MODAL":
+      return {
+        ...state,
+        createProjectModal: !state.createProjectModal
+      };
     case "SET_CURRENT_TASK":
       return {
         ...state,

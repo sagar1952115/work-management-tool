@@ -10,6 +10,10 @@ export const LoginFail = (error) => ({
   payload: error,
 });
 
+export const toggleCreateProjectModal = () => ({
+  type: "TOGGLE_CREATE_PROJECT_MODAL"
+});
+
 export const toggleModal = () => ({
   type: "TOGGLE_MODAL",
 });

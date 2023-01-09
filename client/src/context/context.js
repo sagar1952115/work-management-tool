@@ -7,6 +7,7 @@ export const INITIAL_STATE = {
   isFetching: false,
   error: null,
   tasks: [],
+  createProjectModal: false,
   modalOpen: false,
   currentTask: {},
   cached: true,
@@ -20,7 +21,7 @@ const randomizeSrc = () => {
 export const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(DataReducer, INITIAL_STATE);
   const [src, setSrc] = useState("");
-  const { user, isFetching, error, modalOpen, currentTask, tasks, cached } =
+  const { user, isFetching, error, modalOpen,createProjectModal, currentTask, tasks, cached } =
     state;
 
   useEffect(() => {
@@ -33,6 +34,7 @@ export const DataProvider = ({ children }) => {
         isFetching,
         error,
         modalOpen,
+        createProjectModal,
         tasks,
         currentTask,
         dispatch,
